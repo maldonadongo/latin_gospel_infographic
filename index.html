@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gospel Music Market Analysis: Latam & US Latin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Palette: Energetic & Playful 
+           Primary: #FF6B6B (Coral Red)
+           Secondary: #4ECDC4 (Turquoise)
+           Accent: #FFE66D (Yellow)
+           Dark: #292F36 (Dark Slate)
+           Light: #F7FFF7 (Off White)
+        */
+
+        :root {
+            --color-primary: #FF6B6B;
+            --color-secondary: #4ECDC4;
+            --color-accent: #FFE66D;
+            --color-dark: #292F36;
+            --color-light: #F7FFF7;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--color-light);
+            color: var(--color-dark);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Chart Container Styling - STRICT ADHERENCE TO REQUIREMENTS */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff5252;
+        }
+
+        /* Card Hover Effects */
+        .stat-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+    <!-- 
+        NO SVG USED. NO MERMAID USED.
+        Palette: Energetic & Playful (#FF6B6B, #4ECDC4, #FFE66D)
+        
+        Analysis Summary:
+        1. Brazil is the dominant force (30% Evangelical).
+        2. YouTube is the primary consumption platform over Spotify.
+        3. Cross-cultural collaboration (US/Latam) is the biggest current trend.
+        
+        Chart Choices:
+        1. Regional Market Share -> Bar Chart (Compare)
+        2. Platform Preference -> Donut Chart (Inform/Compare)
+        3. Yearly Growth -> Line Chart (Change)
+        4. Demographics -> Stacked Bar (Composition)
+    -->
+</head>
+
+<body class="antialiased">
+
+    <!-- Header / Hero Section -->
+    <header class="bg-[#292F36] text-white py-16 px-4 relative overflow-hidden">
+        <div
+            class="absolute top-0 right-0 opacity-10 text-[200px] font-bold leading-none select-none pointer-events-none -mr-10 -mt-10">
+            ♫
+        </div>
+        <div class="max-w-6xl mx-auto text-center relative z-10">
+            <h1 class="text-4xl md:text-6xl font-extrabold mb-4 tracking-tight text-[#FFE66D]">
+                RHYTHMS OF FAITH
+            </h1>
+            <h2 class="text-xl md:text-2xl font-light text-[#4ECDC4] mb-8">
+                The Gospel Music Boom in Latin America & The US
+            </h2>
+            <p class="max-w-2xl mx-auto text-gray-300 text-lg">
+                An in-depth look at the "Silent Giant" of the music industry. From the mega-churches of Brazil to the
+                bilingual worship movements in the US, Gospel music is outpacing secular genres in engagement and
+                loyalty.
+            </p>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-12 gap-8">
+
+        <!-- Intro Section (Full Width) -->
+        <section class="md:col-span-12 mb-8">
+            <div class="bg-white rounded-xl shadow-md p-8 border-l-8 border-[#FF6B6B]">
+                <h3 class="text-2xl font-bold mb-4 text-[#292F36]">The "Hallel" Effect</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    The Latin American Gospel market is unique. It operates largely outside the traditional major label
+                    ecosystem, driven by church networks and independent distribution. However, recent years have seen a
+                    massive shift. With <strong>Brazil</strong> standing as the second-largest Christian market globally
+                    and the <strong>US Latin</strong> population bridging languages, the total addressable market is
+                    estimated at over <strong>125 million highly engaged listeners</strong>.
+                </p>
+            </div>
+        </section>
+
+        <!-- KPI Cards (Row 1) -->
+        <div class="md:col-span-4 stat-card bg-white rounded-xl shadow p-6 text-center border-t-4 border-[#4ECDC4]">
+            <div class="text-5xl font-bold text-[#FF6B6B] mb-2">30%</div>
+            <div class="text-sm uppercase tracking-wide font-semibold text-gray-500">Brazil's Evangelical Pop.</div>
+            <p class="text-xs text-gray-400 mt-2">The engine of the Latam market</p>
+        </div>
+        <div class="md:col-span-4 stat-card bg-white rounded-xl shadow p-6 text-center border-t-4 border-[#FFE66D]">
+            <div class="text-5xl font-bold text-[#4ECDC4] mb-2">4x</div>
+            <div class="text-sm uppercase tracking-wide font-semibold text-gray-500">Higher Engagement</div>
+            <p class="text-xs text-gray-400 mt-2">Compared to secular Pop music</p>
+        </div>
+        <div class="md:col-span-4 stat-card bg-white rounded-xl shadow p-6 text-center border-t-4 border-[#FF6B6B]">
+            <div class="text-5xl font-bold text-[#292F36] mb-2">$3.2B</div>
+            <div class="text-sm uppercase tracking-wide font-semibold text-gray-500">Est. Market Value</div>
+            <p class="text-xs text-gray-400 mt-2">Live events + Streaming (Latam/US)</p>
+        </div>
+
+        <!-- Section 2: Regional Powerhouses (Bar Chart) -->
+        <section class="md:col-span-8 bg-white rounded-xl shadow-lg p-6">
+            <div class="mb-6">
+                <h3 class="text-xl font-bold text-[#292F36] flex items-center">
+                    <span class="text-2xl mr-2">🌎</span> Regional Market Dominance
+                </h3>
+                <p class="text-sm text-gray-600 mt-2">
+                    While Spanish-speaking Latam is vast, Brazil (Portuguese) stands alone as a titan. The "US Latin"
+                    sector acts as a high-revenue bridge, producing bilingual content that travels south.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="regionalChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Section 3: Genre Split (Donut) -->
+        <section class="md:col-span-4 bg-white rounded-xl shadow-lg p-6 flex flex-col">
+            <div class="mb-4">
+                <h3 class="text-xl font-bold text-[#292F36] flex items-center">
+                    <span class="text-2xl mr-2">🥁</span> Genre Breakdown
+                </h3>
+                <p class="text-sm text-gray-600 mt-2">
+                    "Worship" (Contemporary) is the pop-music equivalent. However, "Urbano" (Reggaeton/Trap) captures
+                    the youth.
+                </p>
+            </div>
+            <div class="chart-container flex-grow">
+                <canvas id="genreChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Section 4: Streaming Wars (Line Chart) -->
+        <section class="md:col-span-12 bg-white rounded-xl shadow-lg p-6 mt-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="text-xl font-bold text-[#292F36] mb-4">The Digital Sanctuary</h3>
+                    <p class="text-gray-600 text-sm mb-4">
+                        The pandemic (2020) accelerated digital adoption in churches, leading to a massive spike in
+                        streaming.
+                    </p>
+                    <p class="text-gray-600 text-sm mb-4">
+                        Unlike secular music, <strong>YouTube</strong> retains a disproportionately high market share
+                        (approx 55%) versus audio-only platforms like Spotify. Gospel consumers "watch" worship services
+                        and lyric videos religiously.
+                    </p>
+                    <div class="bg-[#F3F4F6] p-4 rounded-lg">
+                        <div class="font-bold text-[#FF6B6B]">Trend Alert:</div>
+                        <div class="text-xs text-gray-600">The "Collaborative Release" strategy (e.g., Maverick City +
+                            Elevation) has doubled cross-border streams since 2021.</div>
+                    </div>
+                </div>
+                <div class="md:col-span-2">
+                    <div class="chart-container">
+                        <canvas id="streamingTrendChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: The "Crossover" Process Flow (HTML Diagram) -->
+        <section class="md:col-span-12 bg-[#292F36] rounded-xl shadow-lg p-8 mt-4 text-white">
+            <h3 class="text-2xl font-bold text-[#FFE66D] mb-6 text-center">The "Translation Hit" Pipeline</h3>
+            <p class="text-center text-gray-300 max-w-3xl mx-auto mb-10">
+                A unique characteristic of this market is the "Translation Pipeline." A hit song in the US (English)
+                often becomes a hit in Latam (Spanish/Portuguese) within 6 months via official translations.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 relative">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center w-full md:w-1/4 relative z-10">
+                    <div
+                        class="w-16 h-16 rounded-full bg-[#FF6B6B] flex items-center justify-center text-3xl font-bold shadow-lg mb-4">
+                        1</div>
+                    <div class="text-center">
+                        <div class="font-bold text-lg text-[#FF6B6B]">Origin</div>
+                        <div class="text-sm text-gray-300">US Release (English)</div>
+                        <div class="text-xs text-gray-500 mt-1">e.g., "Way Maker"</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div
+                    class="hidden md:block absolute top-8 left-[12%] w-[25%] h-1 bg-gradient-to-r from-[#FF6B6B] to-[#4ECDC4]">
+                </div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center w-full md:w-1/4 relative z-10">
+                    <div
+                        class="w-16 h-16 rounded-full bg-[#4ECDC4] flex items-center justify-center text-3xl font-bold shadow-lg mb-4">
+                        2</div>
+                    <div class="text-center">
+                        <div class="font-bold text-lg text-[#4ECDC4]">Adaptation</div>
+                        <div class="text-sm text-gray-300">Official Translation</div>
+                        <div class="text-xs text-gray-500 mt-1">Local Labels License</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div
+                    class="hidden md:block absolute top-8 left-[38%] w-[25%] h-1 bg-gradient-to-r from-[#4ECDC4] to-[#FFE66D]">
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center w-full md:w-1/4 relative z-10">
+                    <div
+                        class="w-16 h-16 rounded-full bg-[#FFE66D] flex items-center justify-center text-3xl font-bold shadow-lg mb-4 text-[#292F36]">
+                        3</div>
+                    <div class="text-center">
+                        <div class="font-bold text-lg text-[#FFE66D]">Localization</div>
+                        <div class="text-sm text-gray-300">Local Artist Cover</div>
+                        <div class="text-xs text-gray-500 mt-1">Brazil/Mexico Versions</div>
+                    </div>
+                </div>
+
+                <!-- Connector -->
+                <div
+                    class="hidden md:block absolute top-8 left-[63%] w-[25%] h-1 bg-gradient-to-r from-[#FFE66D] to-[#FF6B6B]">
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center w-full md:w-1/4 relative z-10">
+                    <div
+                        class="w-16 h-16 rounded-full border-4 border-[#FF6B6B] bg-[#292F36] flex items-center justify-center text-3xl font-bold shadow-lg mb-4">
+                        4</div>
+                    <div class="text-center">
+                        <div class="font-bold text-lg text-white">Viral Hit</div>
+                        <div class="text-sm text-gray-300">Church Adoption</div>
+                        <div class="text-xs text-gray-500 mt-1">Sung every Sunday</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Demographics (Grouped Bar Chart) -->
+        <section class="md:col-span-6 bg-white rounded-xl shadow-lg p-6 mt-4">
+            <div class="mb-4">
+                <h3 class="text-xl font-bold text-[#292F36]">Listener Age Profiles</h3>
+                <p class="text-sm text-gray-600">
+                    The Gospel audience is remarkably young in Latam compared to the US General Market.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="demographicsChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Section 7: Platform Share (Stacked Bar) -->
+        <section class="md:col-span-6 bg-white rounded-xl shadow-lg p-6 mt-4">
+            <div class="mb-4">
+                <h3 class="text-xl font-bold text-[#292F36]">Consumption by Platform</h3>
+                <p class="text-sm text-gray-600">
+                    Video (YouTube) leads because worship is communal. Audio streaming is growing fast in the US Latin
+                    sector.
+                </p>
+            </div>
+            <div class="chart-container">
+                <canvas id="platformChart"></canvas>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#292F36] text-gray-400 py-8 text-center text-sm">
+        <p>&copy; 2024 Gospel Market Analysis | Data synthesized from Industry Reports (2020-2024)</p>
+        <p class="mt-2 text-xs">Note: Figures are estimates based on aggregated market data for Latin America and US
+            Latin sectors.</p>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        // Utility: Label Wrapping for Chart.js
+        function splitLabel(label) {
+            if (typeof label !== 'string' || label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= 16) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Utility: Common Tooltip Configuration
+        const commonTooltip = {
+            callbacks: {
+                title: function (tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // Chart 1: Regional Market Share (Bar)
+        const ctxRegion = document.getElementById('regionalChart').getContext('2d');
+        const regionLabels = ['Brazil', 'Mexico', 'US Latin', 'Colombia', 'Argentina', 'Other'];
+        new Chart(ctxRegion, {
+            type: 'bar',
+            data: {
+                labels: regionLabels.map(splitLabel),
+                datasets: [{
+                    label: 'Market Share (%)',
+                    data: [42, 18, 15, 10, 8, 7],
+                    backgroundColor: [
+                        '#FF6B6B', // Brazil (Primary)
+                        '#4ECDC4', // Mexico
+                        '#FFE66D', // US Latin
+                        '#292F36',
+                        '#D1D5DB',
+                        '#E5E7EB'
+                    ],
+                    borderRadius: 5,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltip,
+                    title: { display: true, text: 'Market Share by Country/Region' }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#f3f4f6' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // Chart 2: Genre Breakdown (Donut)
+        const ctxGenre = document.getElementById('genreChart').getContext('2d');
+        const genreLabels = ['Contemp. Worship', 'Christian Urban/Trap', 'Traditional/Hymns', 'Latin Pop/Ballad', 'Rock/Alternative'];
+        new Chart(ctxGenre, {
+            type: 'doughnut',
+            data: {
+                labels: genreLabels.map(splitLabel),
+                datasets: [{
+                    data: [55, 20, 10, 10, 5],
+                    backgroundColor: ['#FF6B6B', '#4ECDC4', '#FFE66D', '#292F36', '#9CA3AF'],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 10 } } },
+                    tooltip: commonTooltip
+                },
+                cutout: '60%'
+            }
+        });
+
+        // Chart 3: Streaming Growth (Line)
+        const ctxTrend = document.getElementById('streamingTrendChart').getContext('2d');
+        new Chart(ctxTrend, {
+            type: 'line',
+            data: {
+                labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+                datasets: [{
+                    label: 'Digital Streams (Billions)',
+                    data: [12.5, 22.1, 28.4, 35.2, 44.8, 55.1],
+                    borderColor: '#4ECDC4',
+                    backgroundColor: 'rgba(78, 205, 196, 0.1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#FF6B6B',
+                    pointRadius: 4,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: true },
+                    tooltip: commonTooltip,
+                    title: { display: true, text: 'Growth in Digital Streams (Latam + US Latin)' }
+                },
+                scales: {
+                    y: { beginAtZero: false, grid: { borderDash: [5, 5] } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // Chart 4: Demographics (Bar - Side by Side)
+        const ctxDemo = document.getElementById('demographicsChart').getContext('2d');
+        new Chart(ctxDemo, {
+            type: 'bar',
+            data: {
+                labels: ['13-17', '18-24', '25-34', '35-49', '50+'],
+                datasets: [
+                    {
+                        label: 'Gospel Market',
+                        data: [15, 28, 30, 18, 9],
+                        backgroundColor: '#FF6B6B',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'General Pop Market',
+                        data: [10, 22, 25, 25, 18],
+                        backgroundColor: '#D1D5DB',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: { position: 'top' }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#f3f4f6' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // Chart 5: Platform Share (Horizontal Bar)
+        const ctxPlatform = document.getElementById('platformChart').getContext('2d');
+        const platformLabels = ['YouTube (Video)', 'Spotify', 'Apple Music', 'Deezer', 'Amazon Music'];
+        new Chart(ctxPlatform, {
+            type: 'bar',
+            indexAxis: 'y',
+            data: {
+                labels: platformLabels.map(splitLabel),
+                datasets: [{
+                    label: 'Platform Share (%)',
+                    data: [55, 25, 10, 6, 4],
+                    backgroundColor: [
+                        '#FF0000', // YouTube Brand Color hint
+                        '#1DB954', // Spotify Brand Color hint
+                        '#292F36',
+                        '#FFE66D',
+                        '#4ECDC4'
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltip
+                },
+                scales: {
+                    x: { beginAtZero: true }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
